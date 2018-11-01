@@ -16,12 +16,19 @@
 package io.openshift.booster;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.Arrays;
+
 @SpringBootApplication
-public class BoosterApplication {
+public class BoosterApplication implements CommandLineRunner {
+
+    private static final Logger logger = LoggerFactory.getLogger(BoosterApplication.class);
 
     public static void main(String[] args) {
         SpringApplication.run(BoosterApplication.class, args);
@@ -30,5 +37,10 @@ public class BoosterApplication {
     @Bean
     public JacksonJsonProvider jsonProvider() {
         return new JacksonJsonProvider();
+    }
+
+    @Override
+    public void run(String... strings) throws Exception {
+        logger.info("Application started with command-line arguments: {} . \n To kill this application, press Ctrl + C.", Arrays.toString(strings));
     }
 }
