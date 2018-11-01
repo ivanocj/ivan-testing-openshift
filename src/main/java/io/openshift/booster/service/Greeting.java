@@ -15,7 +15,10 @@
  */
 package io.openshift.booster.service;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 // tag::snippet-greeting[]
+@XmlRootElement
 public class Greeting {
 
     public static final String FORMAT = "Hello, %s!";
