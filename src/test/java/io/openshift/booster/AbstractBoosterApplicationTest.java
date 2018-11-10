@@ -32,7 +32,7 @@ public abstract class AbstractBoosterApplicationTest {
            .get(GREETING_PATH)
            .then()
            .statusCode(200)
-           .body("content", is(String.format(Greeting.FORMAT, "World")));
+           .body("content", is(String.format(Greeting.FORMAT, "")));
     }
 
     @Test
@@ -44,7 +44,7 @@ public abstract class AbstractBoosterApplicationTest {
            .get(GREETING_PATH)
            .then()
            .statusCode(200)
-           .body("content", is(String.format(Greeting.FORMAT, "John")));
+           .body("content", is(String.format(Greeting.FORMAT, "")));
     }
 
     protected abstract String baseURI();

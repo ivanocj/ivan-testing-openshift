@@ -21,7 +21,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Greeting {
 
-    public static final String FORMAT = "Hello, %s!";
+    //public static final String FORMAT = "Hello, %s!";
+    public static final String FORMAT = "";
 
     private final String content;
 
